@@ -1,0 +1,23 @@
+<div ng-include src="'views/header.html'"></div>
+<div class="page-header">
+	<h3  ng-show="DEFAULT_LANGUAGE == 'TH'">สั่งการบ้านใหม่</h3>
+	<h3  ng-show="DEFAULT_LANGUAGE == 'EN'">New Home Work</h3>
+	{{Teacher.firstname_en + ' ' + Teacher.lastname_en}}
+	<br>
+	{{Subject.subject_name_en}}
+</div>
+<form name="n_form" novalidate>
+	<div class="row form-group">
+		<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<div class="form-group has-feedback">
+					<label>ห้องเรียน :</label>
+					<select name="classroom" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" ng-model="Form.classroom_id" required ng-options="item.classroom_id as item.classroom_name_en for item in ClassRoomList">
+						<option value="">กรุณาเลือก</option>
+						
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
